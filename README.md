@@ -1,27 +1,30 @@
-# CitasDian
+# Página de citas de la dian (Backend)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
+Esta es una práctica para la implementación de una página web, utiliza NodeJS como framework de backend, Angular en el Frontend y una base de datos mySql. Para su correcta ejecución es necesar
 
-## Development server
+El proyecto de NodeJS se encuentra también en los repositorios de esta misma cuenta.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Instalación
 
-## Code scaffolding
+Verifique que tenga NodeJs y Angular CLI instalados en su ordenador, luego diríjase mediante terminal de comandos al directorio en dónde clono el proyecto y ejecute los siguientes comandos:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para instalar las dependencias
 
-## Build
+```bash
+npm install --save
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
 
-## Running unit tests
+Para ejecutar el proyecto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+ng serve -o
+```
 
-## Running end-to-end tests
+Es recomendado que verifique que el puerto 4200 no se encuentre en uso para evitar conflictos.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Recursos
 
-## Further help
+[Angular CLI](https://cli.angular.io/)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+[Node JS](https://nodejs.org/es/)
