@@ -1,51 +1,32 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { SendHttpRequestService } from './send-http-request.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
 
-  constructor(private http: HttpClient) {
+  complementUrl = 'employee';
+
+  constructor(private _sendHttpRequestService: SendHttpRequestService) {
 
     console.log('Connected service of center of attention');
 
   }
 
-  sendService(method, body, route: string) {
-    const url = `http://localhost:8081/api/employee/${route}`;
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    };
-
-    switch (method) {
-      case 'GET': {
-        return this.http.get(url, httpOptions);
-      }
-
-      case 'POST': {
-        return this.http.post(url, body, httpOptions);
-      }
-
-    }
-
-  }
-
   getAllEmployee() {
-    return this.sendService('GET', null, '');
+    return this._sendHttpRequestService.httpGet(this.complementUrl);
   }
 
   getEmployeeByIdCenter(id) {
     let body = {
       "id_centro_atencion": id
     }
-    return this.sendService('POST', body, "getEmployeeByIdCenter");
+    return this._sendHttpRequestService.httpPost(this.complementUrl + "getEmployeeByIdCenter", body);
   }
 
   saveEmployee(body) {
-    console.log(body);
-    return this.sendService('POST', body, 'saveEmployee');
+    return this._sendHttpRequestService.httpPost(this.complementUrl + "saveEmployee", body);
   }
 }

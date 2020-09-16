@@ -1,59 +1,37 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { SendHttpRequestService } from './send-http-request.service';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonService {
 
-  constructor(private http: HttpClient) {
+  complementUrl = 'person';
+  httpOptions;
+
+  constructor(private _sendHttpRequestService: SendHttpRequestService) {
     console.log('Connected service of center of person');
   }
 
-  sendService(method, body) {
-    const url = `http://localhost:8081/api/person`;
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    };
-
-    switch (method) {
-      case 'GET': {
-        return this.http.get(url, httpOptions);
-      }
-
-      case 'POST': {
-        return this.http.post(url, body, httpOptions);
-
-      }
-
-      case 'DELETE': {
-        const httpOptionsDel = {
-          headers: new HttpHeaders({
-            'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
-            'id_persona': `${body}`
-          })
-        };
-
-        console.log(httpOptionsDel);
-        return this.http.delete(url, httpOptionsDel);
-
-      }
-
-    }
-
-  }
-
   getAllPerson() {
-    return this.sendService('GET', null);
+    return this._sendHttpRequestService.httpGet(this.complementUrl);
   }
 
   savePerson(body) {
-    return this.sendService('POST', body);
+    return this._sendHttpRequestService.httpPost(this.complementUrl, body);
   }
 
   deletePerson(id) {
-    return this.sendService('DELETE', id);
+
+    let httpOptionsDel = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+      'id_persona': `${id}`
+    })
+
+
+    console.log(httpOptionsDel);
+
+    return this._sendHttpRequestService.httpDelete(this.complementUrl, httpOptionsDel);
   }
 }

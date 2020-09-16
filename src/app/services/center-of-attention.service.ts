@@ -1,53 +1,32 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { SendHttpRequestService } from './send-http-request.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CenterOfAttentionService {
 
-  constructor(private http: HttpClient) {
+  complementUrl = 'centerOfAttention';
+
+  constructor(private _sendHttpRequestService: SendHttpRequestService) {
 
     console.log('Connected service of center of attention');
 
   }
 
-
-  sendService(method, body, route: string) {
-    const url = `http://localhost:8081/api/centerOfAttention/${route}`;
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    };
-
-    switch (method) {
-      case 'GET': {
-        return this.http.get(url, httpOptions);
-      }
-
-      case 'POST': {
-        return this.http.post(url, body, httpOptions);
-      }
-
-    }
-
-  }
-
   getAllCenterOfAttention() {
-    return this.sendService('GET', null, '');
+    return this._sendHttpRequestService.httpGet(this.complementUrl);
   }
 
   getCenterOfAttentionById(id) {
     let body = {
       "id_centro_atencion": id
     }
-    return this.sendService('POST', body, 'getCenterOfAttentionById')
+    return this._sendHttpRequestService.httpPost(this.complementUrl + 'getCenterOfAttentionById', body);
   }
 
   saveCenterOfAttention(body) {
-    console.log(body);
-    return this.sendService('POST', body, 'saveCenterOfAttention');
+    return this._sendHttpRequestService.httpPost(this.complementUrl + 'saveCenterOfAttention', body);
   }
 
 

@@ -1,4 +1,4 @@
-# Página de citas de la dian (Backend)
+# Página de citas de la dian (Frontend)
 
 Esta es una práctica para la implementación de una página web, utiliza NodeJS como framework de backend, Angular en el Frontend y una base de datos mySql. Para su correcta ejecución es necesar
 
