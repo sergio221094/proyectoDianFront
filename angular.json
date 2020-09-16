@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "citasDian"
+    }
+  },
+  "defaultProject": "citasDian",
+  "cli": {
+    "analytics": "5f05dab4-340f-463f-8a60-743e49e4e8da"
+  }
 }

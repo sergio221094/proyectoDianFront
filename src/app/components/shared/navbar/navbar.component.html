@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+        <img src="/assets/img/dian.ico" width="40" height="40" alt="" loading="lazy" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['home']">Inicio</a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['registerPerson']">Registro Personas</a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['registerCenter']">Registro Centros</a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['registerEmployee']">Registro Trabajadores</a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['scheduleAppointment']">Agendar Cita</a>
+            </li>
+
+            <li class="nav-item dropdown" routerLinkActive="active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consultas</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" [routerLink]="['getPersons']">Consultar usuarios</a>
+                    <a class="dropdown-item" [routerLink]="['getCenterOfAttention']">Consultar centros de antención</a>
+                    <a class="dropdown-item" [routerLink]="['getAppointment']">Consultar citas</a>
+                    <a class="dropdown-item" [routerLink]="['getDocumentTypes']">Consultar tipos de documento</a>
+                    <a class="dropdown-item" [routerLink]="['getEmployee']">Consultar trabajadores</a>
+                </div>
+            </li>
+
+        </ul>
+
+
+    </div>
+</nav>

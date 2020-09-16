@@ -1,0 +1,20 @@
+<div class="animated fadeIn fast">
+
+    <h3>Registro de centros de atención:</h3>
+    <hr>
+    <form (ngSubmit)="onSubmitCenter()">
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Nombre:</label>
+            <input type="text" [(ngModel)]="centerOfAttention.nombre" name="nombre" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Dirección:</label>
+            <input type="text" [(ngModel)]="centerOfAttention.direccion" name="direccion" class="form-control" />
+        </div>
+
+        <button class="btn btn-success" type="submit">Registrar</button>
+
+    </form>
+</div>

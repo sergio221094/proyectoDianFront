@@ -1,0 +1,25 @@
+<div class="animated fadeIn fast">
+
+    <h3>Registro de trabajadores:</h3>
+    <hr>
+    <form (ngSubmit)="onSubmitEmployee()">
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Centro de atención:</label>
+            <select class="custom-select" [(ngModel)]="employee.id_centro_atencion" name="id_centro_atencion" required>
+                <option selected disabled value="0">Seleccione una sucursal...</option>
+                <option *ngFor="let centerOfAttention of centerOfAttentions" [value]="centerOfAttention.id_centro_atencion">{{ centerOfAttention.nombre }}, {{ centerOfAttention.direccion }}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Nombre:</label>
+            <input type="text" [(ngModel)]="employee.nombres" name="nombres" class="form-control" />
+        </div>
+
+
+
+        <button class="btn btn-success" type="submit">Registrar</button>
+
+    </form>
+</div>

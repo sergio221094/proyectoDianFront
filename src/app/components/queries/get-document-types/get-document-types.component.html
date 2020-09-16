@@ -1,0 +1,18 @@
+<div class="animated fadeIn fast">
+
+    <h3>Tipos de documento:</h3>
+    <hr/>
+    <br>
+
+    <div class="card-columns animated fadeIn">
+        <div *ngFor="let documentType of documentTypes" class="card" style="width: 18rem">
+            <div class="card-body">
+                <p class="card-text">
+                    {{ documentType.nombre }}
+                </p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+    </div>
+</div>

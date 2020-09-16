@@ -1,0 +1,27 @@
+<div class="animated fadeIn fast">
+
+    <h3>Citas:</h3>
+    <hr/>
+    <br>
+
+    <div class="card-columns animated">
+        <div *ngFor="let appointment of appointments" class="card" style="width: 18rem">
+            <div class="card-body">
+                <h5 class="card-title">Usuario:</h5>
+                <p class="card-text">
+                    {{ setNamePerson(appointment.id_persona) }}
+                </p>
+                <h5 class="card-title">Empleado:</h5>
+                <p class="card-text">
+                    {{ appointment.id_trabajador }}
+                </p>
+                <h5 class="card-title">Horario:</h5>
+                <p class="card-text">
+                    {{ appointment.horario }}
+                </p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+    </div>
+</div>

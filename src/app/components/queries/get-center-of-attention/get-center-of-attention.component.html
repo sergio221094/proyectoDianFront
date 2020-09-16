@@ -1,0 +1,19 @@
+<div class="animated fadeIn fast">
+
+    <h3>Centros de atención:</h3>
+    <hr/>
+    <br>
+
+    <div class="card-columns animated">
+        <div *ngFor="let centerOfAttention of centerOfAttentions" class="card" style="width: 18rem">
+            <div class="card-body">
+                <h5 class="card-title">{{ centerOfAttention.nombre }}</h5>
+                <p class="card-text">
+                    {{ centerOfAttention.direccion }}
+                </p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+    </div>
+</div>

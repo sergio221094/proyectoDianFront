@@ -1,0 +1,49 @@
+<div class="animated fadeIn fast">
+
+    <h3>Registro de citas:</h3>
+    <hr>
+
+    <form (ngSubmit)="onSubmitSchedule()">
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Fecha:</label>
+            <input [(ngModel)]="schedule.fecha" name="fecha" class="form-control" type="date" min="2018-01-01">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Horario:</label>
+            <select [(ngModel)]="schedule.horario" name="horario" class="custom-select" id="validationCustom04" required>
+                <option selected disabled value="0">Seleccione una hora...</option>
+                <option *ngFor="let availableTime of availableTimes" [value]="availableTime.time" >{{ availableTime.time }}</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Centro de atención:</label>
+            <select (change)="refreshEmployee($event.target.value)" class="custom-select" id="validationCustom04" required>
+                <option selected disabled value="0">Seleccione una sucursal...</option>
+                <option *ngFor="let centerOfAttention of centerOfAttentions" [value]="centerOfAttention.id_centro_atencion">{{ centerOfAttention.nombre }}, {{ centerOfAttention.direccion }}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Trabajador:</label>
+            <select [(ngModel)]="schedule.id_trabajador" name="id_trabajador" class="custom-select" id="validationCustom04" required>
+                <option selected disabled value="0">Seleccione una empleado...</option>
+                <option *ngFor="let employee of employees" [value]="employee.id_trabajador">{{ employee.nombres }}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Usuario:</label>
+            <select [(ngModel)]="schedule.id_persona " name="id_persona" class="custom-select" id="validationCustom04" required>
+                <option selected disabled value="0">Seleccione un usuario...</option>
+                <option *ngFor="let person of persons" [value]="person.id_persona">{{ person.nit.length > 0 ? 'NIT: ' + person.nit : ''}} {{ person.razon_social.length >0 ? 'Razón social: ' +  person.razon_social : ''}} {{person.identificacion.length > 0 ? 'Doc: ' + person.identificacion : '' }} {{person.nombre.length > 0 ? 'Nombre: ' + person.nombre : '' }}</option>
+            </select>
+        </div>
+        <hr>
+        <button class="btn btn-success" type="submit">Agendar Cita</button>
+    </form>
+
+</div>

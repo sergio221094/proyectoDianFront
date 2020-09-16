@@ -1,0 +1,24 @@
+<div class="animated fadeIn fast">
+
+    <h3>Usuarios:</h3>
+    <hr/>
+    <br>
+
+    <div *ngIf="persons.length <= 0">
+        <h4>No hay usuarios registrados</h4>
+    </div>
+
+    <div class="card-columns animated fadeIn">
+        <div *ngFor="let person of persons" class="card" style="width: 18rem">
+            <div class="card-body">
+                <h5 class="card-title">{{ person.razon_social }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ person.nit }}</h6>
+                <h5 class="card-title">{{ person.nombre }}</h5>
+                <p class="card-text">{{ 'Doc: '+ person.identificacion }}</p>
+                <h6 class="card-subtitle mb-2 text-muted">{{ person.email }}</h6>
+                <p class="card-text">{{ person.telefono }}</p>
+                <button (click)="deletePerson(person.id_persona)" class="btn btn-danger" type="submit">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>

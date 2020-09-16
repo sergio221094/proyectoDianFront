@@ -1,0 +1,20 @@
+<div class="animated fadeIn fast">
+
+    <h3>Trabajadores:</h3>
+    <hr/>
+    <br>
+
+    <div class="card-columns animated">
+        <div *ngFor="let employer of employees" class="card" style="width: 18rem">
+            <div class="card-body">
+                <h5 class="card-title">{{ employer.nombres }}</h5>
+                <p class="card-text">
+                    {{ setNameCenter(employer.id_centro_atencion) }}
+                </p>
+
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+    </div>
+</div>
