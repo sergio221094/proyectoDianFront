@@ -26,6 +26,7 @@ import { GetDocumentTypesComponent } from './components/queries/get-document-typ
 import { RegisterEmployeeComponent } from './components/register-employee/register-employee.component';
 import { RegisterPersonComponent } from './components/register-person/register-person.component';
 import { GetEmployeeComponent } from './components/queries/get-employee/get-employee.component';
+import { GetEmailPhoneComponent } from './components/queries/get-email-phone/get-email-phone.component';
 
 
 
@@ -44,6 +45,7 @@ import { GetEmployeeComponent } from './components/queries/get-employee/get-empl
     GetDocumentTypesComponent,
     RegisterEmployeeComponent,
     GetEmployeeComponent,
+    GetEmailPhoneComponent,
 
   ],
   imports: [HttpClientModule, BrowserModule, AppRoutingModule, FormsModule],

@@ -10,6 +10,7 @@ import { GetCenterOfAttentionComponent } from './components/queries/get-center-o
 import { GetAppointmentComponent } from './components/queries/get-appointment/get-appointment.component';
 import { GetDocumentTypesComponent } from './components/queries/get-document-types/get-document-types.component';
 import { GetEmployeeComponent } from './components/queries/get-employee/get-employee.component';
+import { GetEmailPhoneComponent } from './components/queries/get-email-phone/get-email-phone.component';
 
 
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'getAppointment', component: GetAppointmentComponent },
   { path: 'getDocumentTypes', component: GetDocumentTypesComponent },
   { path: 'getEmployee', component: GetEmployeeComponent },
+  { path: 'getEmailPhone', component: GetEmailPhoneComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 

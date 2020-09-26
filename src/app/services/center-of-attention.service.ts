@@ -6,7 +6,7 @@ import { SendHttpRequestService } from './send-http-request.service';
 })
 export class CenterOfAttentionService {
 
-  complementUrl = 'centerOfAttention';
+  complementUrl = 'centerOfAttention/';
 
   constructor(private _sendHttpRequestService: SendHttpRequestService) {
 
@@ -15,7 +15,7 @@ export class CenterOfAttentionService {
   }
 
   getAllCenterOfAttention() {
-    return this._sendHttpRequestService.httpGet(this.complementUrl);
+    return this._sendHttpRequestService.httpGet(this.complementUrl + 'getAllCenterOfAttention');
   }
 
   getCenterOfAttentionById(id) {

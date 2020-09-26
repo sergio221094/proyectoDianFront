@@ -6,7 +6,7 @@ import { SendHttpRequestService } from './send-http-request.service';
 })
 export class DocumentTypesService {
 
-  complementUrl = 'documentTypes';
+  complementUrl = 'documentTypes/';
 
   constructor(private _sendHttpRequestService: SendHttpRequestService) {
     console.log('Connected service of center of document types');
@@ -14,6 +14,6 @@ export class DocumentTypesService {
 
 
   getAllDocumentTypes() {
-    return this._sendHttpRequestService.httpGet(this.complementUrl);
+    return this._sendHttpRequestService.httpGet(this.complementUrl + 'getAllDocumentTypes');
   }
 }

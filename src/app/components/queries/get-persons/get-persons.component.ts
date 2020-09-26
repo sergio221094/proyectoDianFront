@@ -8,8 +8,13 @@ import { PersonService } from '../../../services/person.service';
 export class GetPersonsComponent implements OnInit {
 
   persons: any[] = [];
+  edit = 1;
 
   constructor(private _personService: PersonService) {
+
+  }
+
+  getAllPersons() {
     this._personService.getAllPerson().subscribe((data: any) => {
       console.log(data);
       this.persons = data.response;
@@ -23,5 +28,11 @@ export class GetPersonsComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void { }
+  changeEdit(id) {
+    this.edit = id;
+  }
+
+  ngOnInit(): void {
+    this.getAllPersons();
+  }
 }

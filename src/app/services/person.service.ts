@@ -7,7 +7,7 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class PersonService {
 
-  complementUrl = 'person';
+  complementUrl = 'person/';
   httpOptions;
 
   constructor(private _sendHttpRequestService: SendHttpRequestService) {
@@ -15,11 +15,11 @@ export class PersonService {
   }
 
   getAllPerson() {
-    return this._sendHttpRequestService.httpGet(this.complementUrl);
+    return this._sendHttpRequestService.httpGet(this.complementUrl + 'getAllPerson');
   }
 
   savePerson(body) {
-    return this._sendHttpRequestService.httpPost(this.complementUrl, body);
+    return this._sendHttpRequestService.httpPost(this.complementUrl + 'savePerson', body);
   }
 
   deletePerson(id) {
@@ -29,9 +29,12 @@ export class PersonService {
       'id_persona': `${id}`
     })
 
-
     console.log(httpOptionsDel);
 
-    return this._sendHttpRequestService.httpDelete(this.complementUrl, httpOptionsDel);
+    return this._sendHttpRequestService.httpDelete(this.complementUrl + 'deletePerson', httpOptionsDel);
+  }
+
+  getEmailPhone() {
+    return this._sendHttpRequestService.httpGet(this.complementUrl + 'getEmailAndPhone');
   }
 }

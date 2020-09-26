@@ -6,7 +6,7 @@ import { SendHttpRequestService } from './send-http-request.service';
 })
 export class AppointmentService {
 
-  complementUrl = 'appointment';
+  complementUrl = 'appointment/';
 
   constructor(private _sendHttpRequestService: SendHttpRequestService) {
 
@@ -15,11 +15,19 @@ export class AppointmentService {
   }
 
   getAllAppointment() {
-    return this._sendHttpRequestService.httpGet(this.complementUrl);
+    return this._sendHttpRequestService.httpGet(this.complementUrl + 'getAllAppointment');
   }
 
   saveAppointment(body) {
-    return this._sendHttpRequestService.httpPost(this.complementUrl, body);
+    return this._sendHttpRequestService.httpPost(this.complementUrl + 'saveAppointment', body);
   }
 
+
+  getAppoinmentByRangeDates(body) {
+    return this._sendHttpRequestService.httpPost(this.complementUrl + "getAppoinmentByRangeDates", body);
+  }
+
+  getAppoinmentByRangeDatesAndTypePerson(body) {
+    return this._sendHttpRequestService.httpPost(this.complementUrl + "getAppoinmentByRangeDatesAndTypePerson", body);
+  }
 }

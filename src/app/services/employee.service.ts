@@ -7,7 +7,7 @@ import { SendHttpRequestService } from './send-http-request.service';
 })
 export class EmployeeService {
 
-  complementUrl = 'employee';
+  complementUrl = 'employee/';
 
   constructor(private _sendHttpRequestService: SendHttpRequestService) {
 
@@ -16,7 +16,7 @@ export class EmployeeService {
   }
 
   getAllEmployee() {
-    return this._sendHttpRequestService.httpGet(this.complementUrl);
+    return this._sendHttpRequestService.httpGet(this.complementUrl + 'getAllEmployee');
   }
 
   getEmployeeByIdCenter(id) {

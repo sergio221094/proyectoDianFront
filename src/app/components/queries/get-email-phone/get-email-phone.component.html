@@ -1,0 +1,16 @@
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Teléfono</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of arrayData ; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ data.email }}</td>
+            <td>{{ data.telefono }}</td>
+        </tr>
+    </tbody>
+</table>
